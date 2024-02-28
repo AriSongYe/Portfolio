@@ -26,7 +26,7 @@ nav ul li a#name {
     width: 40px; /* 링크의 너비 */
     height: 40px; /* 링크의 높이 */
     line-height: 20px; /* 링크 안의 텍스트를 수직 가운데 정렬 */
-    margin-right: 40px;
+    margin-right: 25px;
     font-size: 16px; /* 폰트 크기 설정 */
     position: relative; /* 자식 요소에 대한 상대적인 위치 설정 */
     vertical-align: middle; /* 텍스트를 수직 가운데로 정렬 */
@@ -41,4 +41,3 @@ nav ul li a:hover {
 nav ul li a#name:hover {
     color: #fff;
 }
-

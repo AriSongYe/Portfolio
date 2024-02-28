@@ -1,0 +1,1 @@
+gsap.to(".profile", { x: 200, duration: 2 });
