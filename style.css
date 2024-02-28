@@ -1,0 +1,39 @@
+* {
+    background-color: #39A0ED;    
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav ul li {
+    list-style: none; /* 리스트 스타일 제거 */
+}
+
+nav ul li a {
+    color: #fff; /* 텍스트 색상 설정 */
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav ul li a#name {
+    display: inline-block; /* 인라인 블록 요소로 변경하여 텍스트의 크기에 맞추도록 함 */
+    padding: 20px; /* 텍스트 주위에 여백 추가 */
+    border-radius: 50%; /* 동그란 배경을 만들기 위해 경계 반지름 설정 */
+    background-color: #007bff; /* 배경 색상 설정 */
+    width: 40px; /* 링크의 너비 */
+    height: 40px; /* 링크의 높이 */
+    line-height: 20px; /* 링크 안의 텍스트를 수직 가운데 정렬 */
+    margin-right: 20px; /* 링크 간의 간격 설정 */
+    position: relative; /* 자식 요소에 대한 상대적인 위치 설정 */
+    transition: transform 0.3s ease; /* 변환 속성에 대한 애니메이션 추가 */
+    vertical-align: middle; /* 텍스트를 수직 가운데로 정렬 */
+}
+
+
+nav ul li a#name:hover {
+    transform: rotateX(180deg); /* X 축을 중심으로 180도 회전하여 종이접기 효과를 줌 */
+}
