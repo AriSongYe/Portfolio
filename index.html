@@ -10,22 +10,32 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="nav_bar">
             <ul>
-                <li><a href="about" id="name">Song Ye</a></li>
-                <li><a href="home" id="home">· Home</a></li>
-                <li><a href="projects" id=projects">· Projects</a></li>
-                <li><a href="contact" id="contact">· Contact</a></li>
+                <li><a href="#" id="name">Song Ye</a></li>
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id=projects">Projects</a></li>
+                <li><a href="#" id="contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <div class="home">
-            <img class="profile" src="Assets/profile.jpeg" alt="profile">
-            <p>I'm a front-end developer based in Seoul, South Korea. I have a passion for web design and love to create for web and mobile devices. I'm always looking for new opportunities to learn and grow as a developer.</p>
-        </div>
+    <div class="main-text-container">
+        <canvas id="MainText"></canvas>
+    </div>
+    <div class="index-container">
+        <h1 class="index-title">Index</h1>
+        <br>
+        <h1 class="index-list">· Introduce</h1>
+        <br>
+        <h1 class="index-list">· Projects</h1>
+        <br>
+        <h1 class="index-list">· Metaphor</h1>
+        <br>
+        <h1 class="index-list">· Contact</h1>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="script.js"></script>
+    <script src="leonsans/dist/leon.js"></script>
 </body>
 </html>

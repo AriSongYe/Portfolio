@@ -1,13 +1,52 @@
 * {
     background-color: #39A0ED;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-family: 'Leon Sans', sans-serif;
+    color: #fff;
 }
 
-.container {
+body {
+    overflow-x: hidden;
+}
+
+#nav_bar {
+    position: fixed;
+    top: -100px; /* 처음에 숨겨짐 */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    transition: top 0.3s; /* 애니메이션 속성 추가 */
+}
+
+#nav_bar.show {
+    top: 0; /* 나타남 */
+}
+
+.main-text-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
+}
+.index-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.index-title {
+    font-size: 64px;
+    margin-left: 50vw;
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+.index-list {
+    font-size: 40px;
+    margin-left: 38vw;
+    text-align: left;
+    opacity: 0;
+    transition: all 1s;
 }
 
 .home {
@@ -17,3 +56,9 @@
 .profile {
     width: 10%;
 }
+
+canvas {
+    margin: 0 auto;
+    display: block;
+}
+
