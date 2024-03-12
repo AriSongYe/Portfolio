@@ -1,10 +1,35 @@
 let leon, canvas, ctx;
 
-const sw = window.innerWidth;
-const sh = window.innerHeight;
+
+const sw = window.innerWidth; // 화면의 너비
+const sh = window.innerHeight; // 화면의 높이
 
 const pixelRatio = 2;
 
+window.addEventListener('resize', () => {
+    resize();
+});
+
+// 캔버스 크기 조정 함수
+function resize() {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 622) {
+        leon.size = 60;
+        smallLeon.size = 30;
+    }
+
+    else if (windowWidth > 622 && windowWidth < 768) {
+        leon.size = 80;
+        smallLeon.size = 40;
+    }
+    else if (windowWidth > 768  && windowWidth < 1024) {
+        leon.size = 100;
+        smallLeon.size = 50;
+    }
+}
+
+
+// Leon Sans Text Animation
 function init() {
 
     canvas = document.getElementById('MainText');
@@ -20,25 +45,23 @@ function init() {
         text: 'Welcome!\nSonye\'s Portfolio.',
         color: ['#fff'],
         size: 120,
-        weight: 200
+        weight: 300, 
+        align: 'left',
+        isWave: true,
+        amplitude: 0.1,
     });
 
     smallLeon = new LeonSans({
         text: 'Please Scroll Down.',
         color: ['#fff'],
         size: 60,
-        weight: 150
+        align : 'left',
+        weight : 200,
+        isWave: true,
+        amplitude: 0.1,
+    
     });
-
-    leon.align = 'left';
-    leon.weight = 200;
-    leon.isWave = true;
-    leon.amplitude = 0.1;
-
-    smallLeon.align = 'left';
-    smallLeon.weight = 200;
-    smallLeon.isWave = true;
-    smallLeon.amplitude = 0.1;
+    resize();
 
     requestAnimationFrame(animate);
 }
@@ -65,17 +88,27 @@ window.onload = () => {
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('nav_bar');
     const scrollPos = window.scrollY;
+    const tl = gsap.timeline();
 
     if (scrollPos > window.innerHeight * 0.8) {
         navbar.classList.add('show');
     } else {
         navbar.classList.remove('show');
     }
+
+    if (scrollPos > window.innerHeight * 2) {
+        tl.to('.introduce-profile', {
+            x: 50
+        }, 1)
+        .to('.introduce-p', {
+            x: 50
+        }, 1.1)
+    }
 });
 
 document.getElementById('home').addEventListener('click', (event) => {
-    event.preventDefault(); // 기본 동작 방지
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // 부드럽게 맨 위로 스크롤
+    event.preventDefault(); 
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
 });
 
 let observer = new IntersectionObserver((e)=> {
@@ -92,3 +125,7 @@ const index = document.querySelectorAll('h1');
 index.forEach((element) => {
     observer.observe(element);
 });
+
+const button = document.querySelector('#name');
+
+

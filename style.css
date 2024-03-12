@@ -1,24 +1,21 @@
 * {
     background-color: #39A0ED;
     font-family: 'Leon Sans', sans-serif;
-    color: #fff;
+    margin: 0;
+    color: #fff;    
+}
+
+::selection {
+    color: #26EDBB;
 }
 
 body {
     overflow-x: hidden;
 }
 
-#nav_bar {
-    position: fixed;
-    top: -100px; /* 처음에 숨겨짐 */
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    transition: top 0.3s; /* 애니메이션 속성 추가 */
-}
-
-#nav_bar.show {
-    top: 0; /* 나타남 */
+canvas {
+    margin: 0;
+    display: flex;
 }
 
 .main-text-container {
@@ -27,38 +24,100 @@ body {
     align-items: center;
     height: 100vh;
 }
+
 .index-container {
-    display: block;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     height: 100vh;
 }
 
-.index-title {
-    font-size: 64px;
-    margin-left: 50vw;
+
+.title {
+    font-weight: 350; 
+    font-size: 54px;
+    margin-left: 18vw;
     opacity: 0;
-    transition: all 1.5s;
+    transition: all 1s;
 }
 
-.index-list {
-    font-size: 40px;
-    margin-left: 38vw;
+.list {
+    font-weight: 300;
+    font-size: 30px;
+    margin-left: 27vw;
+    margin-bottom: 3vw;
     text-align: left;
     opacity: 0;
     transition: all 1s;
 }
 
-.home {
-    text-align: center; /* 부모 요소에 이미지를 가운데로 정렬 */
+.introduce-grid-container {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: center;
+    height: 100vh;
 }
 
-.profile {
-    width: 10%;
+.introduce-profile {
+    width: 200px;
+    height: auto;
+    margin-left : 10vw;
 }
 
-canvas {
-    margin: 0 auto;
-    display: block;
+.introduce-p {
+    margin-left: 18vw;
+    font-size: 14px;
 }
 
+.tech-badge-container {
+    display: flex;
+    justify-content: center;
+}
+
+.tech-badge-container img {
+    padding-right: 3px;
+}
+
+.projects-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 60px;
+    }
+    .list {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .title {
+        font-size: 42px;
+    }
+    .list {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+    .list {
+        font-size: 18px;
+    }
+}
+
+
+.projects-container {
+    height: 100vh;
+}
